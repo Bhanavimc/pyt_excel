@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code Excel Handling</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Excel Data Handling</h2>
+    <form method="POST" action="/add">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="usn">USN:</label>
+            <input type="text" name="usn" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="branch">Branch:</label>
+            <input type="text" name="branch" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="sec">Sec:</label>
+            <input type="text" name="sec" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="hobbies">Hobbies:</label>
+            <input type="text" name="hobbies" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Add Data</button>
+    </form>
+
+    <hr>
+
+    <h3>Delete Data</h3>
+    <form method="POST" action="/delete">
+        <div class="form-group">
+            <label for="delete_name">Name to Delete:</label>
+            <input type="text" name="delete_name" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete Data</button>
+    </form>
+
+    {% if table %}
+        <div class="mt-4">
+            {{ table | safe }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
